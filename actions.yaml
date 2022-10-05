@@ -1,0 +1,4 @@
+fail:
+  description: Run an action that will fail
+success:
+  description: Run an action that will succeed
