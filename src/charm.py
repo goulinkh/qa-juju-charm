@@ -26,6 +26,8 @@ class DeployMinimalCharm(CharmBase):
         self.framework.observe(self.on.start, self._on_start)
         self.framework.observe(self.on.fail_action, self._on_fail_action)
         self.framework.observe(self.on.success_action, self._on_success_action)
+        self.framework.observe(self.on.apt_update_action, self._on_apt_update_action)
+        self.framework.observe(self.on.no_logs_fail_action, self._on_no_logs_fail_action)
 
     def _on_install(self, event):
         """
@@ -52,8 +54,20 @@ class DeployMinimalCharm(CharmBase):
         event.fail(message="Permission denied")
     def _on_success_action(self, event):
         event.log("Updating dependecies...")
-        time.sleep(10)
+        time.sleep(3)
         event.log("Action finished successfully!")
+        time.sleep(3)
+        event.log("Action finished successfully!")
+        time.sleep(3)
+        event.log("Action finished successfully!")
+        time.sleep(3)
+        event.log("Action finished successfully!")
+    def _on_no_logs_fail_action(self, event):
+        event.fail(message="No logs message failure")
+    def _on_apt_update_action(self, event):
+        event.log("Updating dependecies...")
+        time.sleep(10)
+        event.log("Updated 142 successfully!")
         event.set_results({"updated_dependencies": 142, "already_updated": 199})
 if __name__ == "__main__":
     main(DeployMinimalCharm)

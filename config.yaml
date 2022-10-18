@@ -1,0 +1,21 @@
+options:
+  name:
+    default: Wiki
+    description: The name, or Title of the Wiki
+    type: string
+  skin:
+    default: vector
+    description: skin for the Wiki
+    type: string
+  logo:
+    default:
+    description: URL to fetch logo from
+    type: string
+  admins:
+    default:
+    description: "Comma-separated list of admin users to create: user:pass[,user:pass]+"
+    type: string
+  debug:
+    default: false
+    type: boolean
+    description: turn on debugging features of mediawiki

@@ -2,3 +2,7 @@ fail:
   description: Run an action that will fail
 success:
   description: Run an action that will succeed
+apt-update:
+  description: Update the list of dependencies
+no-logs-fail:
+  description: A dummy action that fails with no stdout
